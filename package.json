@@ -1,0 +1,19 @@
+{
+  "name": "react-with-webpack-and-babel",
+  "version": "0.0.1",
+  "description": "Set up a React environment from scratch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BastienBesnard/react-with-webpack-and-babel.git"
+  },
+  "author": "Bastien Besnard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BastienBesnard/react-with-webpack-and-babel/issues"
+  },
+  "homepage": "https://github.com/BastienBesnard/react-with-webpack-and-babel#readme"
+}
