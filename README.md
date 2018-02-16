@@ -2,5 +2,11 @@
 
 Set up a React environment from scratch.
 
-Webpack: A module bundler.  
-Babel: A javascript compiler.
+## Installation
+
+```
+npm install
+npm run start:dev
+```
+
+http://localhost:8080/

@@ -1,0 +1,11 @@
+# Dependencies
+/node_modules
+
+# production
+/dist
+
+# Logs
+npm-debug.log*
+
+# Visual Studio code
+.vscode
