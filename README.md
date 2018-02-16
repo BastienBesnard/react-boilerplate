@@ -1,6 +1,6 @@
 # react-with-webpack-and-babel
 
-Set up a React environment from scratch.
+Set up a React environment from scratch using webpack and babel.
 
 ## Installation
 
