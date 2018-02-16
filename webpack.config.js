@@ -25,6 +25,14 @@ module.exports = {
                 test: /\.jsx$/,
                 use: 'babel-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {loader: 'style-loader'},   // Add exports of a module as style to DOM
+                    {loader: 'css-loader'},     // Loads CSS file with resolved imports and returns CSS code
+                    {loader: 'sass-loader'}     // Loads and compiles a SASS/SCSS file
+                ]
             }
         ]
     },
