@@ -1,7 +1,7 @@
 {
   "name": "react-with-webpack-and-babel",
   "version": "0.0.1",
-  "description": "Set up a React environment from scratch using webpack and babel.",
+  "description": "Set up a React environment from scratch using Webpack and Babel.",
   "author": "Bastien Besnard",
   "license": "MIT",
   "scripts": {
