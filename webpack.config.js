@@ -46,6 +46,7 @@ module.exports = {
         HtmlWebpackPluginConfig // Generates a solid base html page with all the webpack generated files built in. 
     ],
     resolve: {
+        modules: ['node_modules'],
         extensions: ['.js', '.jsx']
     },
     devServer: {
