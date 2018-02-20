@@ -8,7 +8,7 @@ import FunctionalComponent from './FunctionalComponent';
 function App() {
     return (
         <div my-app='app'>
-            {'Hello world!'}
+            <div className='title'>{'Hello world!'}</div>
             <ClassComponent myProp='prop class component' />
             <ClassComponent />
             <FunctionalComponent myProp='prop functional component' />

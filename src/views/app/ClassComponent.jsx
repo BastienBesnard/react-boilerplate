@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './ClassComponent.scss';
+
 const propTypes = {
     myProp: PropTypes.string
 };
@@ -21,8 +23,8 @@ class ClassComponent extends React.Component {
         const { myStateValue } = this.state;
         return (
             <div my-app='class-component'>
-                {myProp}
-                {myStateValue}
+                <div>{myProp}</div>
+                <div>{myStateValue}</div>
             </div>
         );
     }
