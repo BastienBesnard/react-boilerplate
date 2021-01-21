@@ -1,4 +1,4 @@
-# react-with-webpack-and-babel
+# react-boilerplate
 
 Set up a React environment from scratch using Webpack and Babel.
 
