@@ -1,5 +1,7 @@
 const path = require('path');
 
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 // Html webpack plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -19,16 +21,14 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: [
-                    'babel-loader',
-                    'eslint-loader'
+                    'babel-loader'
                 ],
                 exclude: /node_modules/
             },
             {
                 test: /\.jsx$/,
                 use: [
-                    'babel-loader',
-                    'eslint-loader'
+                    'babel-loader'
                 ],
                 exclude: /node_modules/
             },
@@ -43,7 +43,8 @@ module.exports = {
         ]
     },
     plugins: [
-        HtmlWebpackPluginConfig // Generates a solid base html page with all the webpack generated files built in. 
+        new ESLintPlugin({extensions: ['js', 'jsx']}),
+        HtmlWebpackPluginConfig // Generates a solid base html page with all the webpack generated files built in.
     ],
     resolve: {
         modules: ['node_modules'],
