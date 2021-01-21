@@ -19,5 +19,6 @@ function FunctionalComponent({ myProp }) {
 
 FunctionalComponent.propTypes = propTypes;
 FunctionalComponent.defaultProps = defaultProps;
+FunctionalComponent.displayName = 'Functionnal component';
 
 export default FunctionalComponent;

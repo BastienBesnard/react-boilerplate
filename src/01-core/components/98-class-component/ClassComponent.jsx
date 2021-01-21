@@ -32,5 +32,6 @@ class ClassComponent extends React.Component {
 
 ClassComponent.propTypes = propTypes;
 ClassComponent.defaultProps = defaultProps;
+ClassComponent.displayName = 'Class component';
 
 export default ClassComponent;
