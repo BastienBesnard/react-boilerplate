@@ -1,22 +1,47 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import "./App.scss";
 
-// Components
-import ClassComponentWithStore from './02-application/99-modules/01-module1';
+// Router
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import ClassComponent from './01-core/components/98-class-component/ClassComponent';
-import FunctionalComponent from './01-core/components/99-functional-component/FunctionalComponent';
+// Samples
+import ModuleSample from "./02-modules/z-module1";
+import ClassComponent from "./01-core/components/z-class-component/ClassComponent";
+import FunctionalComponent from "./01-core/components/z-functional-component/FunctionalComponent";
 
 function App() {
     return (
-        <div my-app='app'>
-            <div className='title'>{'Hello world!'}</div>
-            <ClassComponent myProp='prop class component' />
-            <ClassComponent />
-            <FunctionalComponent myProp='prop functional component' />
-            <FunctionalComponent />
-            <ClassComponentWithStore />
-        </div>
+        <Router>
+            <div>
+                <nav my-app="app">
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/a">A</Link>
+                        </li>
+                        <li>
+                            <Link to="/b">B</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Switch>
+                    <Route path="/a">
+                        <ModuleSample myProp="prop module sample" />
+                    </Route>
+                    <Route path="/b">
+                        <div className="title">{"Hello world!"}</div>
+                        <ClassComponent myProp="prop class component" />
+                        <ClassComponent />
+                    </Route>
+                    <Route path="/">
+                        <FunctionalComponent myProp="prop functional component" />
+                        <FunctionalComponent />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
     );
 }
 

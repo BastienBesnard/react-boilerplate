@@ -1,5 +1,8 @@
 import { combineReducers } from "redux";
 
-import counterReducer from "./02-application/99-modules/01-module1/counterReducer";
+// Samples
+import counterReducer from "./02-modules/z-module1/reducer";
 
-export default combineReducers({ counterReducer });
+export default combineReducers({
+    counterReducer
+});

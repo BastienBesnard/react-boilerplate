@@ -10,3 +10,12 @@ npm run start
 ```
 
 http://localhost:8080/
+
+## TODO
+
+-   NavBar
+-   Handle multiple language (per module ?)
+-   Title
+-   Form components => Contact / send email
+-   Table components
+-   Graph componnents

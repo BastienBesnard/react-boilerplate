@@ -1,28 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import './ClassComponent.scss';
+import "./ClassComponent.scss";
 
 const propTypes = {
     myProp: PropTypes.string
 };
 
 const defaultProps = {
-    myProp: 'default prop class component'
+    myProp: "default prop class component"
 };
 
 class ClassComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            myStateValue: 'my state value'
+            myStateValue: "my state value"
         };
     }
     render() {
         const { myProp } = this.props;
         const { myStateValue } = this.state;
         return (
-            <div my-app='class-component'>
+            <div my-app="class-component">
                 <div>{myProp}</div>
                 <div>{myStateValue}</div>
             </div>
@@ -32,6 +32,6 @@ class ClassComponent extends React.Component {
 
 ClassComponent.propTypes = propTypes;
 ClassComponent.defaultProps = defaultProps;
-ClassComponent.displayName = 'Class component';
+ClassComponent.displayName = "Class component";
 
 export default ClassComponent;
