@@ -1,6 +1,7 @@
 import React from "react";
 
 // Components - Navigation
+import Tabs from "../../01-core/components/navigation/tabs";
 import Drawer from "../../01-core/components/navigation/drawer";
 import Link from "../../01-core/components/navigation/link";
 
@@ -24,6 +25,7 @@ class Navigation extends React.Component {
     render() {
         return (
             <div>
+                <Tabs />
                 <Link
                     label="Link label"
                     handleClick={() => console.log("Link clicked!")}
