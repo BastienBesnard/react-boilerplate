@@ -4,6 +4,9 @@ import "./App.scss";
 // Router
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+// Components
+import Menu from "./02-modules/menu";
+
 // Samples
 import ModuleSample from "./02-modules/z-module1";
 import ClassComponent from "./01-core/components/z-class-component/ClassComponent";
@@ -13,6 +16,8 @@ function App() {
     return (
         <Router>
             <div>
+                <Menu />
+
                 <nav my-app="app">
                     <ul>
                         <li>
