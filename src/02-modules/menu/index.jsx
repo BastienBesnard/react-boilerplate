@@ -2,8 +2,8 @@ import React from "react";
 //import PropTypes from "prop-types";
 
 // Components
-import AppBar from "../../01-core/components/app-bar";
-import Drawer from "../../01-core/components/drawer";
+import AppBar from "../../01-core/components/navigation/app-bar";
+import Drawer from "../../01-core/components/navigation/drawer";
 
 const propTypes = {};
 
@@ -15,7 +15,6 @@ class Menu extends React.Component {
         this.state = {
             isDrawerOpen: false
         };
-
         this.toggleDrawer = this.toggleDrawer.bind(this);
     }
     toggleDrawer(isDrawerOpen) {
@@ -26,10 +25,7 @@ class Menu extends React.Component {
         return (
             <div>
                 <AppBar onMenuClick={() => this.toggleDrawer(true)} />
-                <Drawer
-                    isOpen={isDrawerOpen}
-                    toggleDrawer={this.toggleDrawer}
-                />
+                <Drawer open={isDrawerOpen} toggleDrawer={this.toggleDrawer} />
             </div>
         );
     }

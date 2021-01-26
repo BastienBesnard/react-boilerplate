@@ -8,8 +8,8 @@ import { connect } from "react-redux";
 // Actions
 import { addCounter, loadNameInformation } from "./actions";
 // Components
-import Button from "../../01-core/components/button";
-import Input from "../../01-core/components/input";
+import Button from "../../01-core/components/inputs/button";
+import Text from "../../01-core/components/inputs/text";
 
 const mapStateToProps = (state /*, ownProps*/) => {
     const { counterReducer } = state;
@@ -41,9 +41,8 @@ class MyModule extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
     }
-    handleChange(event) {
+    handleChange(value) {
         const { loadNameInformation } = this.props;
-        const { value } = event.target;
         this.setState({ value });
         loadNameInformation(value, "test2");
     }
@@ -65,7 +64,11 @@ class MyModule extends React.Component {
                 <br />
                 <div>{"Counter: " + counter}</div>
                 <br />
-                <Input value={value} onChange={this.handleChange} />
+                <Text
+                    label="Some text label"
+                    value={value}
+                    onChange={this.handleChange}
+                />
                 <div>{"Age: " + (age || "-")}</div>
             </div>
         );

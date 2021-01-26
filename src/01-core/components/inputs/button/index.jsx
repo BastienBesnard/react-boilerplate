@@ -5,8 +5,6 @@ import PropTypes from "prop-types";
 import MuiButton from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 
-import "./index.scss";
-
 const propTypes = {
     label: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,

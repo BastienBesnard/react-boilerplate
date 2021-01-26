@@ -5,17 +5,17 @@ import PropTypes from "prop-types";
 import MuiDrawer from "@material-ui/core/Drawer";
 
 const propTypes = {
-    isOpen: PropTypes.bool.isRequired,
+    open: PropTypes.bool.isRequired,
     toggleDrawer: PropTypes.func.isRequired
 };
 
 const defaultProps = {};
 
-function Drawer({ isOpen, toggleDrawer }) {
+function Drawer({ open, toggleDrawer }) {
     return (
         <MuiDrawer
             anchor={"left"}
-            open={isOpen}
+            open={open}
             onClose={() => toggleDrawer(false)}
         >
             {"TODO"}

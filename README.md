@@ -6,7 +6,7 @@ Set up a React environment from scratch using Webpack and Babel.
 
 ```
 npm install
-npm run start
+npm run start:dev
 ```
 
 http://localhost:8080/
