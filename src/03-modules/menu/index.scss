@@ -1,0 +1,18 @@
+.o-menu {
+    display: flex;
+
+    .o-menu__sidebar {
+    }
+
+    .o-menu__main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .o-menu__main-header {
+    }
+
+    .o-menu__main-content {
+    }
+}

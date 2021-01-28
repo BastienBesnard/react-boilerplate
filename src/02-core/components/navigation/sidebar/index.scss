@@ -1,0 +1,38 @@
+@import "../../../styles/colors/index.scss";
+
+.c-sidebar {
+    width: 75px;
+    height: 100vh;
+    background-color: $background-color-1;
+    text-align: center;
+    .c-sidebar__logo {
+        color: $white;
+    }
+    .c-sidebar__nav {
+    }
+}
+
+.c-sidebar-item {
+    .c-sidebar-link {
+        color: $white;
+        text-decoration: none;
+    }
+
+    .c-sidebar-link__content {
+        padding: 10px 0;
+        border-left-width: 5px;
+        border-left-style: solid;
+        border-left-color: transparent;
+    }
+
+    .c-sidebar-item__active .c-sidebar-link__content {
+        border-left-color: $white;
+        background-color: $background-color-2;
+    }
+
+    .c-sidebar-link__content-logo {
+    }
+    .c-sidebar-link__content-title {
+        font-size: $font-size-4;
+    }
+}

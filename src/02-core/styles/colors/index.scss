@@ -1,0 +1,41 @@
+@import "./amber.scss";
+@import "./blue.scss";
+@import "./blueGrey.scss";
+@import "./brown.scss";
+@import "./common.scss";
+@import "./cyan.scss";
+@import "./deepOrange.scss";
+@import "./deepPurple.scss";
+@import "./green.scss";
+@import "./grey.scss";
+@import "./indigo.scss";
+@import "./lightBlue.scss";
+@import "./lightGreen.scss";
+@import "./lime.scss";
+@import "./orange.scss";
+@import "./pink.scss";
+@import "./purple.scss";
+@import "./red.scss";
+@import "./teal.scss";
+@import "./yellow.scss";
+
+// Text
+$text-color-1: #ff5722; // Title level 1
+$text-color-2: #fafafa; // Title level 2
+$text-color-3: #fafafa; // Title level 3
+$text-color-4: $blue-grey-900; // Text level 1
+$text-color-5: $blue-grey-300; // Text level 2
+$text-color-6: $red-500; // Error
+
+// Background
+$background-color-1: $blue-grey-900;
+$background-color-2: $blue-grey-600;
+
+// Border
+$border-color-1: yellow;
+
+// Font-size
+$font-size-1: 10px;
+$font-size-2: 10px;
+$font-size-3: 10px;
+$font-size-4: 12px;

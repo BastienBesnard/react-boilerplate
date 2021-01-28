@@ -6,7 +6,7 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 // Html webpack plugin
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: "./public/index.html",
+    template: "./src/01-assets/index.html",
     filename: "index.html",
     inject: "body"
 });
@@ -35,14 +35,28 @@ module.exports = {
                     // From bottom to top
                     { loader: "style-loader" }, // Add exports of a module as style to DOM
                     { loader: "css-loader" }, // Load CSS files with resolved imports and return CSS code
-                    { loader: "sass-loader" } // Load and compile SASS/SCSS files into CSS
+                    { loader: "resolve-url-loader" }, // Rewrites relative paths in url() statements based on the original source file
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true //Enables generation of source maps
+                        }
+                    } // Load and compile SASS/SCSS files into CSS
+                ]
+            },
+            {
+                test: /\.ttf$/,
+                use: [
+                    {
+                        loader: "file-loader"
+                    }
                 ]
             }
         ]
     },
     plugins: [
         new ESLintPlugin({ extensions: ["js", "jsx"] }),
-        HtmlWebpackPluginConfig // Generates a solid base html page with all the webpack generated files built in.
+        HtmlWebpackPluginConfig // Generates a solid base html page with all the webpack generated files built in
     ],
     resolve: {
         modules: ["node_modules"],

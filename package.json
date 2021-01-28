@@ -5,7 +5,7 @@
     "author": "Bastien Besnard",
     "license": "MIT",
     "scripts": {
-        "start:dev": "webpack serve --mode=development",
+        "start": "webpack serve --mode=development",
         "build": "webpack"
     },
     "devDependencies": {
@@ -18,9 +18,11 @@
         "eslint": "^7.18.0",
         "eslint-plugin-react": "^7.22.0",
         "eslint-webpack-plugin": "^2.4.3",
+        "file-loader": "^6.2.0",
         "html-webpack-plugin": "^4.5.1",
         "path": "^0.12.7",
         "prettier": "^2.2.1",
+        "resolve-url-loader": "^3.1.2",
         "sass": "^1.32.5",
         "sass-loader": "^10.1.1",
         "style-loader": "^2.0.0",
