@@ -1,15 +1,8 @@
 const path = require("path");
-
 // ESLint webpack plugin
 const ESLintPlugin = require("eslint-webpack-plugin");
-
 // Html webpack plugin
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: "./src/01-assets/index.html",
-    filename: "index.html",
-    inject: "body"
-});
 
 module.exports = {
     entry: "./src/index.js",
@@ -45,7 +38,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.ttf$/,
+                test: /\.(png|jpe?g|gif|svg|ttf)$/,
                 use: [
                     {
                         loader: "file-loader"
@@ -56,7 +49,13 @@ module.exports = {
     },
     plugins: [
         new ESLintPlugin({ extensions: ["js", "jsx"] }),
-        HtmlWebpackPluginConfig // Generates a solid base html page with all the webpack generated files built in
+        new HtmlWebpackPlugin({
+            // Generates a solid base html page with all the webpack generated files built in
+            template: "./src/01-assets/index.html",
+            filename: "index.html",
+            inject: "body",
+            favicon: "./src/01-assets/favicon.svg"
+        })
     ],
     resolve: {
         modules: ["node_modules"],

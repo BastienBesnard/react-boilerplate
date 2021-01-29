@@ -25,19 +25,33 @@ class Feedback extends React.Component {
     render() {
         return (
             <div>
-                <Snackbar open severity={"success"} message={"some message"} />
-                <Button
-                    label="Modal"
-                    onClick={() => this.handleDialogChange(true)}
-                />
-                <Dialog
-                    title={"Some title"}
-                    handleClose={() => this.handleDialogChange(false)}
-                    open={this.state.isDialogOpen}
-                    content={"Some content"}
-                />
-                <Progress />
-                <Backdrop />
+                <div>
+                    <Snackbar
+                        open
+                        severity={"success"}
+                        message={"some message"}
+                    />
+                </div>
+                <div>
+                    <Button
+                        label="Modal"
+                        onClick={() => this.handleDialogChange(true)}
+                    />
+                </div>
+                <div>
+                    <Dialog
+                        title={"Some title"}
+                        handleClose={() => this.handleDialogChange(false)}
+                        open={this.state.isDialogOpen}
+                        content={"Some content"}
+                    />
+                </div>
+                <div>
+                    <Progress />
+                </div>
+                <div>
+                    <Backdrop />
+                </div>
             </div>
         );
     }

@@ -13,9 +13,7 @@ http://localhost:8080/
 
 ## TODO
 
--   Title
 -   Form components => Contact / send email
--   Handle multiple language (per module ?)
 
 ## Sources
 

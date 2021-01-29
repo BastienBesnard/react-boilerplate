@@ -1,18 +1,30 @@
 .o-menu {
+    $sidebar-width: 75px;
+    $header-height: 70px;
+
     display: flex;
 
     .o-menu__sidebar {
+        position: fixed;
+        width: $sidebar-width;
+        height: 100vh;
     }
 
     .o-menu__main {
         flex: 1;
-        display: flex;
-        flex-direction: column;
+        margin-left: $sidebar-width;
+        height: 100vh;
     }
 
     .o-menu__main-header {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: $sidebar-width;
+        width: 100%;
     }
 
     .o-menu__main-content {
+        margin: $header-height 10px 10px 10px;
     }
 }
