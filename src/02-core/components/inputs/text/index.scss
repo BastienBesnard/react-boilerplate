@@ -2,8 +2,13 @@
 @import "../../../styles/colors/index.scss";
 
 .c-text {
-    .c-text__read-mode {
+    .c-text__label-read-mode {
         color: $color-text-1;
         font-weight: bold;
+    }
+    .c-text__value-read-mode {
+        &.Mui-disabled {
+            color: $color-text-1;
+        }
     }
 }

@@ -17,6 +17,7 @@ http://localhost:8080/
 -   Form with read / write mode
 -   Multiple translation files
 -   Form components => Contact / send email
+-   Maintenance page / mode
 
 ## Sources
 

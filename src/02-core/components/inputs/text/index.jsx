@@ -28,15 +28,16 @@ function Text({ label, value, onChange, error, edit }) {
         <div className="c-text">
             <TextField
                 label={label}
-                value={edit ? value : edit || defaultReadValue}
+                value={edit ? value : value || defaultReadValue}
                 onChange={(event) => onChange(event.target.value)}
                 error={error}
+                InputLabelProps={{
+                    classes: { root: !edit ? "c-text__label-read-mode" : "" }
+                }}
                 InputProps={{
                     disabled: !edit,
-                    disableUnderline: !edit
-                }}
-                InputLabelProps={{
-                    classes: { root: !edit ? "c-text__read-mode" : "" }
+                    disableUnderline: !edit,
+                    classes: { root: !edit ? "c-text__value-read-mode" : "" }
                 }}
             />
         </div>
