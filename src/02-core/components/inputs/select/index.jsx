@@ -8,7 +8,11 @@ const propTypes = {};
 const defaultProps = {};
 
 function Select() {
-    return <div>{"TODO: Select and multi select"}</div>;
+    return (
+        <div>
+            {"TODO: Select and multi select => Improve text component instead?"}
+        </div>
+    );
 }
 
 Select.propTypes = propTypes;

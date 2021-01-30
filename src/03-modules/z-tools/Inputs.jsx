@@ -47,7 +47,7 @@ class Inputs extends React.Component {
     }
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <Button
                     label="Button"
                     onClick={() => console.log("Button clicked!")}
@@ -61,16 +61,19 @@ class Inputs extends React.Component {
                     checked={this.state.isSwitchChecked}
                     handleChange={this.handleSwitchChange}
                 />
+                <Text label="Some text label" value={this.state.text} />
                 <Text
                     label="Some text label"
                     value={this.state.text}
                     onChange={this.handleTextChange}
+                    edit
                 />
                 <Text
                     label="Some text label"
                     value={this.state.text}
                     onChange={this.handleTextChange}
                     error
+                    edit
                 />
                 <Select />
                 <Datepicker
@@ -80,7 +83,7 @@ class Inputs extends React.Component {
                 />
                 <Radio />
                 <Autocomplete />
-            </div>
+            </React.Fragment>
         );
     }
 }

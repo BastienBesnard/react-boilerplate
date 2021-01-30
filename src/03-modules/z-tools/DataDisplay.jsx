@@ -1,7 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-// Translate
-import { withTranslation } from "../../02-core/utils/i18n";
 
 // Components - Data display
 import Table from "../../02-core/components/data-display/table";
@@ -9,9 +6,7 @@ import Badge from "../../02-core/components/data-display/badge";
 import Tooltip from "../../02-core/components/data-display/tooltip";
 import Icon from "../../02-core/components/data-display/icon";
 
-const propTypes = {
-    translate: PropTypes.func.isRequired
-};
+const propTypes = {};
 
 const defaultProps = {};
 
@@ -21,9 +16,8 @@ class DataDisplay extends React.Component {
         this.state = {};
     }
     render() {
-        const { translate } = this.props;
         return (
-            <div>
+            <React.Fragment>
                 <h1>{"H1"}</h1>
                 <h2>{"H2"}</h2>
                 <h3>{"H3"}</h3>
@@ -42,7 +36,6 @@ class DataDisplay extends React.Component {
                 <div>
                     <Icon>{"delete"}</Icon>
                 </div>
-                <h1>{translate("z-module2.sample")}</h1>
                 <div>
                     <Table
                         columnList={[
@@ -74,7 +67,7 @@ class DataDisplay extends React.Component {
                         ]}
                     />
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
@@ -83,4 +76,4 @@ DataDisplay.propTypes = propTypes;
 DataDisplay.defaultProps = defaultProps;
 DataDisplay.displayName = "DataDisplay";
 
-export default withTranslation()(DataDisplay);
+export default DataDisplay;

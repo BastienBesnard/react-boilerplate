@@ -1,0 +1,9 @@
+@import "../../../styles/const.scss";
+@import "../../../styles/colors/index.scss";
+
+.c-text {
+    .c-text__read-mode {
+        color: $color-text-1;
+        font-weight: bold;
+    }
+}

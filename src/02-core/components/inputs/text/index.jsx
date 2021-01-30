@@ -4,33 +4,47 @@ import PropTypes from "prop-types";
 // Material-ui
 import TextField from "@material-ui/core/TextField";
 
+// Style
+import "./index.scss";
+
 const propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.any,
-    onChange: PropTypes.func.isRequired,
-    error: PropTypes.bool
+    onChange: PropTypes.func,
+    error: PropTypes.bool,
+    edit: PropTypes.bool
 };
 
 const defaultProps = {
     value: "",
+    onChange: () => {},
     error: false
 };
 
-function Input({ label, value, onChange, error }) {
+const defaultReadValue = "-";
+
+function Text({ label, value, onChange, error, edit }) {
     return (
-        <div className="c-input">
+        <div className="c-text">
             <TextField
                 label={label}
-                value={value}
+                value={edit ? value : edit || defaultReadValue}
                 onChange={(event) => onChange(event.target.value)}
                 error={error}
+                InputProps={{
+                    disabled: !edit,
+                    disableUnderline: !edit
+                }}
+                InputLabelProps={{
+                    classes: { root: !edit ? "c-text__read-mode" : "" }
+                }}
             />
         </div>
     );
 }
 
-Input.propTypes = propTypes;
-Input.defaultProps = defaultProps;
-Input.displayName = "Input";
+Text.propTypes = propTypes;
+Text.defaultProps = defaultProps;
+Text.displayName = "Text";
 
-export default Input;
+export default Text;

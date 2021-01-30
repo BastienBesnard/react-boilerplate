@@ -24,7 +24,7 @@ class Feedback extends React.Component {
     }
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <div>
                     <Snackbar
                         open
@@ -52,7 +52,7 @@ class Feedback extends React.Component {
                 <div>
                     <Backdrop />
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }

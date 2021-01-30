@@ -15,13 +15,13 @@ class Navigation extends React.Component {
     }
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <Tabs />
                 <Link
                     label="Link label"
                     handleClick={() => console.log("Link clicked!")}
                 />
-            </div>
+            </React.Fragment>
         );
     }
 }

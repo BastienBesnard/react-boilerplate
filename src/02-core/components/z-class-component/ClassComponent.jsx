@@ -22,7 +22,7 @@ class ClassComponent extends React.Component {
         const { myProp } = this.props;
         const { myStateValue } = this.state;
         return (
-            <div my-app="class-component">
+            <div className="c-class-component">
                 <div>{myProp}</div>
                 <div>{myStateValue}</div>
             </div>

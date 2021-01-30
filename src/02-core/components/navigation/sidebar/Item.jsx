@@ -14,7 +14,7 @@ import Icon from "../../data-display/icon";
 const propTypes = {
     icon: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired
+    path: PropTypes.string.isRequired
 };
 
 const defaultProps = {};
@@ -23,13 +23,13 @@ const useStyles = makeStyles(() => ({
     buttonBase: { display: "block" }
 }));
 
-function Item({ icon, title, link }) {
+function Item({ icon, title, path }) {
     const classes = useStyles();
     return (
         <div className="c-sidebar-item">
             <NavLink
-                exact={link === "/"}
-                to={link}
+                exact={path === "/"}
+                to={path}
                 activeClassName="c-sidebar-item__active"
                 className="c-sidebar-link"
             >

@@ -1,5 +1,15 @@
 {
-    "z-module2": {
-        "sample": "Exemple de traduction en Français."
+    "menu": {
+        "appTitle": "BASTIEN B.",
+        "home": "Home",
+        "module": "Module",
+        "tools": "Tools",
+        "404": "404"
+    },
+    "z-module": {
+        "sample": "Exemple de traduction.",
+        "increment": "Click to increment",
+        "name": "Fill name",
+        "age": "Age"
     }
 }

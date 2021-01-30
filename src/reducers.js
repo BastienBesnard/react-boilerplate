@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 
 // Samples
-import counterReducer from "./03-modules/z-module1/reducer";
+import sampleReducer from "./03-modules/z-module/reducer";
 
 export default combineReducers({
-    counterReducer
+    sampleReducer
 });

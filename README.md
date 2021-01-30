@@ -13,8 +13,10 @@ http://localhost:8080/
 
 ## TODO
 
--   Form components => Contact / send email
+-   Read field (label + value + currency(kg, etc..) + isRequired)
 -   Form with read / write mode
+-   Multiple translation files
+-   Form components => Contact / send email
 
 ## Sources
 

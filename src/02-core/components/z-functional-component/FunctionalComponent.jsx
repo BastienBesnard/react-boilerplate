@@ -10,7 +10,7 @@ const defaultProps = {
 };
 
 function FunctionalComponent({ myProp }) {
-    return <div my-app="functionnal-component">{myProp}</div>;
+    return <div className="c-functionnal-component">{myProp}</div>;
 }
 
 FunctionalComponent.propTypes = propTypes;

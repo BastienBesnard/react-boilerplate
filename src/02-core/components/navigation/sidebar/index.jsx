@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 // Components
 import Item from "./Item";
 
+// Style
 import "./index.scss";
 
 const propTypes = {
