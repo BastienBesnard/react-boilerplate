@@ -1,13 +1,11 @@
+@import "../../02-core/styles/const.scss";
+
 .o-menu {
-    $sidebar-width: 75px;
-    $header-height: 70px;
+    $app-bar-margin-top: 10px;
 
     display: flex;
 
     .o-menu__sidebar {
-        position: fixed;
-        width: $sidebar-width;
-        height: 100vh;
     }
 
     .o-menu__main {
@@ -25,6 +23,12 @@
     }
 
     .o-menu__main-content {
-        margin: $header-height 10px 10px 10px;
+        margin: ($app-bar-height-mobile + $app-bar-margin-top) 10px 10px 10px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+        .o-menu__main-content {
+            margin-top: $app-bar-height-desktop + $app-bar-margin-top;
+        }
     }
 }

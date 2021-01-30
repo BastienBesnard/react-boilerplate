@@ -18,11 +18,10 @@ class MyModule2 extends React.Component {
     render() {
         return (
             <div>
-                <Inputs />
                 <DataDisplay />
+                <Inputs />
                 <Feedback />
                 <Navigation />
-                {/* Titles/typography */}
             </div>
         );
     }

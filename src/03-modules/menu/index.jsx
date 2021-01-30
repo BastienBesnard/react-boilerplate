@@ -1,6 +1,8 @@
 import React from "react";
 //import PropTypes from "prop-types";
 
+import logo from "../../01-assets/img/sample.svg";
+
 // Router
 import { Switch, Route } from "react-router-dom";
 
@@ -16,6 +18,7 @@ import FunctionalComponent from "../../02-core/components/z-functional-component
 
 import "./index.scss";
 
+// TODO: Put in translation file, mutualise links between button and routes
 const buttonList = [
     {
         link: "/",
@@ -48,13 +51,14 @@ class Menu extends React.Component {
         return (
             <div className="o-menu">
                 <div className="o-menu__sidebar">
-                    <Sidebar buttonList={buttonList} />
+                    <Sidebar logo={logo} buttonList={buttonList} />
                 </div>
                 <div className="o-menu__main">
                     <div className="o-menu__main-header">
-                        <AppBar />
+                        <AppBar title={"BASTIEN B."} />{" "}
+                        {/* TODO: Put title in translation file */}
                     </div>
-                    <div className="o-menu__main-content">
+                    <main className="o-menu__main-content">
                         <Switch>
                             <Route path="/a">
                                 <Module2Sample />
@@ -67,10 +71,10 @@ class Menu extends React.Component {
                                 <FunctionalComponent />
                                 <ModuleSample myProp="prop module sample" />
                             </Route>
+                            <Route path="/404">{"TODO 404"}</Route>
                             <Route path="/">{"TODO"}</Route>
-                            <Route path="/404">{"TODO"}</Route>
                         </Switch>
-                    </div>
+                    </main>
                 </div>
             </div>
         );

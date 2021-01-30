@@ -1,25 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import logo from "../../../../01-assets/img/sample.svg";
-
 // Components
 import Item from "./Item";
 
 import "./index.scss";
 
 const propTypes = {
+    logo: PropTypes.string.isRequired,
     buttonList: PropTypes.array.isRequired
 };
 
 const defaultProps = {};
 
-function Sidebar({ buttonList }) {
+function Sidebar({ logo, buttonList }) {
     return (
         <div className="c-sidebar">
             <div className="c-sidebar__logo">
-                {/* TODO: Set as props */}
-                <img src={logo} alt="logo" />
+                <img src={logo} alt="logo" onClick={() => {}} />
             </div>
             <nav className="c-sidebar__nav">
                 {buttonList.map((o) => (

@@ -14,6 +14,7 @@ http://localhost:8080/
 ## TODO
 
 -   Form components => Contact / send email
+-   Form with read / write mode
 
 ## Sources
 

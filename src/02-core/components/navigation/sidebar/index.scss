@@ -1,23 +1,39 @@
+@import "../../../styles/const.scss";
 @import "../../../styles/colors/index.scss";
 
 .c-sidebar {
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    width: $sidebar-width;
+    height: 100vh;
+    overflow: auto;
+
     background-color: $background-color-1;
     text-align: center;
+
     .c-sidebar__logo {
-        line-height: 64px; // TODO: Config?
+        line-height: $app-bar-height-mobile;
+
         img {
             max-height: 40px;
             max-width: 40px;
             vertical-align: middle;
         }
     }
+
+    @media (min-width: $desktop-min-width) {
+        .c-sidebar__logo {
+            min-height: $app-bar-height-desktop;
+        }
+    }
+
     .c-sidebar__nav {
     }
 }
 
 .c-sidebar-item {
+    &:hover {
+        background-color: $background-color-2;
+    }
     .c-sidebar-link {
         color: $white;
         text-decoration: none;
@@ -32,11 +48,12 @@
 
     .c-sidebar-item__active .c-sidebar-link__content {
         border-left-color: $white;
-        background-color: $background-color-2;
+        background-color: $background-color-3;
     }
 
     .c-sidebar-link__content-logo {
     }
+
     .c-sidebar-link__content-title {
         font-size: $font-size-4;
     }
