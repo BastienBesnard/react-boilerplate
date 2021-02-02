@@ -32,7 +32,8 @@ function Field({ name, label, type, edit, handleChange, values, errors }) {
                     type={type}
                     value={values[name]}
                     onChange={handleChange(name)}
-                    error={errors[name]} // TODO: add custom error ?
+                    error={errors[name]}
+                    helperText={errors[name]}
                     edit={edit}
                 />
             );

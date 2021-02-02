@@ -52,14 +52,15 @@ class Form extends React.Component {
                 {
                     label: translate(TRANSLATION_PREFIX + "save"),
                     type: "submit",
+                    icon: "save",
                     disabled: isSubmitting,
-                    icon: "save"
+                    progress: isSubmitting
                 },
                 {
                     label: translate(TRANSLATION_PREFIX + "cancel"),
                     type: "button",
-                    disabled: isSubmitting,
-                    onClick: () => this.handleReset(handleReset)
+                    onClick: () => this.handleReset(handleReset),
+                    disabled: isSubmitting
                 }
             );
         } else {
@@ -83,7 +84,7 @@ class Form extends React.Component {
                         const errors = {};
                         if (!values.someText1) {
                             // TODO: Generic validation by type?
-                            errors.someText1 = true;
+                            errors.someText1 = "Some error";
                         }
                         return errors;
                     }}

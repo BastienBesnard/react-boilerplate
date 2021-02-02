@@ -13,6 +13,7 @@ const propTypes = {
     value: PropTypes.any,
     onChange: PropTypes.func,
     error: PropTypes.bool,
+    helperText: PropTypes.string,
     edit: PropTypes.bool
 };
 
@@ -21,12 +22,13 @@ const defaultProps = {
     value: "",
     onChange: () => {},
     error: false,
+    helperText: undefined,
     edit: false
 };
 
 const defaultReadValue = "-";
 
-function Text({ label, type, value, onChange, error, edit }) {
+function Text({ label, type, value, onChange, error, helperText, edit }) {
     return (
         <div className="c-text">
             <TextField
@@ -35,6 +37,7 @@ function Text({ label, type, value, onChange, error, edit }) {
                 value={edit ? value : value || defaultReadValue}
                 onChange={onChange}
                 error={error}
+                helperText={helperText}
                 InputLabelProps={{
                     classes: { root: !edit ? "c-text__label-read-mode" : "" }
                 }}

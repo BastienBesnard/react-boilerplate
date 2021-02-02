@@ -11,8 +11,14 @@ class FormSample extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    handleSubmit(values, { setSubmitting }) {
+        setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+        }, 4000);
+    }
     render() {
         return (
             <Form
@@ -22,12 +28,7 @@ class FormSample extends React.Component {
                     someText2: "",
                     someCheckbox: false
                 }}
-                onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 400);
-                }}
+                onSubmit={this.handleSubmit}
                 edit
             >
                 {(props) => (

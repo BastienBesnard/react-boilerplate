@@ -1,14 +1,19 @@
 import React from "react";
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 // Material-ui
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-const propTypes = {};
+const propTypes = {
+    size: PropTypes.number
+};
 
-const defaultProps = {};
+const defaultProps = {
+    size: undefined
+};
 
-function Progress() {
-    return <div>{"TODO: Progress"}</div>;
+function Progress({ size }) {
+    return <CircularProgress size={size} />;
 }
 
 Progress.propTypes = propTypes;

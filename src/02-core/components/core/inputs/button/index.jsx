@@ -6,6 +6,10 @@ import MuiButton from "@material-ui/core/Button";
 
 // Components
 import Icon from "../../data-display/icon";
+import Progress from "../../feedback/progress";
+
+// Style
+import "./index.scss";
 
 const TYPES = {
     BUTTON: "button",
@@ -16,24 +20,35 @@ const propTypes = {
     label: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     type: PropTypes.oneOf([TYPES.BUTTON, TYPES.SUBMIT]),
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    disabled: PropTypes.bool,
+    progress: PropTypes.bool
 };
 
 const defaultProps = {
     onClick: () => {},
     type: TYPES.BUTTON,
-    icon: null
+    icon: null,
+    disabled: false,
+    progress: false
 };
 
-function Button({ label, onClick, type, icon }) {
-    let props = { onClick, type };
+function Button({ label, onClick, type, icon, disabled, progress }) {
+    let buttonProps = { onClick, type, disabled };
     if (icon) {
-        props.startIcon = <Icon>{icon}</Icon>;
+        buttonProps.startIcon = <Icon>{icon}</Icon>;
     }
     return (
-        <MuiButton variant="outlined" {...props}>
-            {label}
-        </MuiButton>
+        <div className={"c-button" + (progress ? " c-button-loading" : "")}>
+            <MuiButton variant="outlined" {...buttonProps}>
+                {label}
+            </MuiButton>
+            {progress && (
+                <div className="c-button-loading__progress">
+                    <Progress size={24} />
+                </div>
+            )}
+        </div>
     );
 }
 

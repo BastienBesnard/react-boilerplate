@@ -57,13 +57,21 @@ class Inputs extends React.Component {
                 {this.renderTitle("Button")}
                 <Button
                     label="Some button"
-                    onClick={() => console.log("Button clicked!")}
+                    onClick={() => alert("Button clicked!")}
                     icon="send"
                 />
                 <br />
                 <Button
                     label="Some button 2"
-                    onClick={() => console.log("Button clicked!")}
+                    onClick={() => alert("Button 2 clicked!")}
+                />
+                <br />
+                <Button
+                    label="Some button 3"
+                    onClick={() => alert("Button 3 clicked!")}
+                    icon="send"
+                    disabled
+                    progress
                 />
                 {this.renderTitle("Checkbox")}
                 <Checkbox
@@ -95,6 +103,7 @@ class Inputs extends React.Component {
                     value={this.state.text}
                     onChange={this.handleTextChange}
                     error
+                    helperText={"Some error"}
                     edit
                 />
                 {this.renderTitle("Select")}

@@ -1,0 +1,14 @@
+.c-button {
+}
+
+.c-button-loading {
+    display: inline-block;
+    position: relative;
+    .c-button-loading__progress {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -12px;
+        margin-left: -12px;
+    }
+}
