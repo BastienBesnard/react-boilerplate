@@ -1,7 +1,8 @@
 import React from "react";
 
 // Components - Form
-import { Form, Field, FIELD_TYPES } from "../../02-core/components/form";
+import { Form, Field } from "../../02-core/components/form";
+import { sampleDto } from "../../02-core/dto";
 
 const propTypes = {};
 
@@ -19,38 +20,26 @@ class FormSample extends React.Component {
             setSubmitting(false);
         }, 4000);
     }
+
     render() {
         return (
             <Form
                 title="Form"
+                dto={sampleDto}
+                edit
                 initialValues={{
+                    // TODO: Automatically compute initial values ?
                     someText1: "",
                     someText2: "",
                     someCheckbox: false
                 }}
                 onSubmit={this.handleSubmit}
-                edit
             >
                 {(props) => (
                     <React.Fragment>
-                        <Field // TODO: Add field validator, formater/unformater
-                            type={FIELD_TYPES.TEXT} // TODO: Add type in variable shared in the app ?
-                            name={"someText1"}
-                            label={"Some text 1"}
-                            {...props}
-                        />
-                        <Field
-                            type={FIELD_TYPES.TEXT}
-                            name={"someText2"}
-                            label={"Some text 2"}
-                            {...props}
-                        />
-                        <Field
-                            type={FIELD_TYPES.CHECKBOX}
-                            name={"someCheckbox"}
-                            label={"Some checkbox"}
-                            {...props}
-                        />
+                        <Field name={"someText1"} {...props} />
+                        <Field name={"someText2"} {...props} />
+                        <Field name={"someCheckbox"} {...props} />
                     </React.Fragment>
                 )}
             </Form>

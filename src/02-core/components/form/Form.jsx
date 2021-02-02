@@ -10,14 +10,18 @@ import { Formik } from "formik";
 // Components
 import Section from "../section";
 
+// Const
+import { DOMAINS } from "./config";
+
 const TRANSLATION_PREFIX = "core.components.form.";
 
 const propTypes = {
     title: PropTypes.string,
+    dto: PropTypes.object.isRequired,
+    edit: PropTypes.bool,
     initialValues: PropTypes.object.isRequired,
     onSubmit: PropTypes.func.isRequired,
     children: PropTypes.func.isRequired,
-    edit: PropTypes.bool,
     // Translate
     translate: PropTypes.func.isRequired
 };
@@ -74,7 +78,7 @@ class Form extends React.Component {
         return res;
     }
     render() {
-        const { title, initialValues, onSubmit, children } = this.props;
+        const { title, dto, initialValues, onSubmit, children } = this.props;
         const { edit } = this.state;
         return (
             <div className="c-form">
@@ -82,13 +86,23 @@ class Form extends React.Component {
                     initialValues={initialValues}
                     validate={(values) => {
                         const errors = {};
-                        if (!values.someText1) {
-                            // TODO: Generic validation by type?
-                            errors.someText1 = "Some error";
+                        // TODO: Generic validation by type?
+                        // iterate over each values or initial values?
+                        if (dto["someText1"].required && !values.someText1) {
+                            errors.someText1 = "field required";
                         }
+                        if (
+                            !DOMAINS[dto["someCheckbox"].domain].validate(
+                                values.someCheckbox
+                            )
+                        ) {
+                            alert("checkbox required");
+                        }
+
                         return errors;
                     }}
                     onSubmit={onSubmit}
+                    validateOnChange={false}
                 >
                     {(obj) => {
                         const { handleSubmit, handleReset, isSubmitting } = obj;
@@ -101,7 +115,7 @@ class Form extends React.Component {
                                         isSubmitting
                                     )}
                                 >
-                                    {children({ ...obj, edit })}
+                                    {children({ ...obj, dto, edit })}
                                 </Section>
                             </form>
                         );
