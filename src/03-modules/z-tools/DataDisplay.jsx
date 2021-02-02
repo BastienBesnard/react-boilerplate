@@ -1,10 +1,12 @@
 import React from "react";
 
 // Components - Data display
-import Table from "../../02-core/components/data-display/table";
-import Badge from "../../02-core/components/data-display/badge";
-import Tooltip from "../../02-core/components/data-display/tooltip";
-import Icon from "../../02-core/components/data-display/icon";
+import Table from "../../02-core/components/core/data-display/table";
+import Badge from "../../02-core/components/core/data-display/badge";
+import Tooltip from "../../02-core/components/core/data-display/tooltip";
+import Icon from "../../02-core/components/core/data-display/icon";
+// Components - Other
+import Section from "../../02-core/components/section";
 
 const propTypes = {};
 
@@ -17,7 +19,7 @@ class DataDisplay extends React.Component {
     }
     render() {
         return (
-            <React.Fragment>
+            <Section title={"Data display"}>
                 <h1>{"H1"}</h1>
                 <h2>{"H2"}</h2>
                 <h3>{"H3"}</h3>
@@ -26,7 +28,7 @@ class DataDisplay extends React.Component {
                 <h6>{"H6"}</h6>
                 <div>
                     <Tooltip title="Some tooltip">
-                        <span>{"Test tooltip"}</span>
+                        <span>{"Test tooltip on hover"}</span>
                     </Tooltip>
                 </div>
                 <br />
@@ -67,7 +69,7 @@ class DataDisplay extends React.Component {
                         ]}
                     />
                 </div>
-            </React.Fragment>
+            </Section>
         );
     }
 }

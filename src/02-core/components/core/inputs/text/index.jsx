@@ -9,6 +9,7 @@ import "./index.scss";
 
 const propTypes = {
     label: PropTypes.string.isRequired,
+    type: PropTypes.string,
     value: PropTypes.any,
     onChange: PropTypes.func,
     error: PropTypes.bool,
@@ -16,20 +17,23 @@ const propTypes = {
 };
 
 const defaultProps = {
+    type: "text",
     value: "",
     onChange: () => {},
-    error: false
+    error: false,
+    edit: false
 };
 
 const defaultReadValue = "-";
 
-function Text({ label, value, onChange, error, edit }) {
+function Text({ label, type, value, onChange, error, edit }) {
     return (
         <div className="c-text">
             <TextField
+                type={type}
                 label={label}
                 value={edit ? value : value || defaultReadValue}
-                onChange={(event) => onChange(event.target.value)}
+                onChange={onChange}
                 error={error}
                 InputLabelProps={{
                     classes: { root: !edit ? "c-text__label-read-mode" : "" }

@@ -10,17 +10,13 @@ import { Switch, Route } from "react-router-dom";
 import { withTranslation } from "../../02-core/utils/i18n";
 
 // Components
-import AppBar from "../../02-core/components/navigation/app-bar";
-import Sidebar from "../../02-core/components/navigation/sidebar";
+import Page from "../../02-core/components/page";
 
 // Samples
 import ModuleSample from "../z-module";
 import Tools from "../z-tools";
 
-// Style
-import "./index.scss";
-
-const translationPrefix = "menu.";
+const translationPrefix = "modules.menu.";
 
 const propTypes = {
     translate: PropTypes.func.isRequired
@@ -71,30 +67,19 @@ class Menu extends React.Component {
         const buttonList = this.computeButtonList();
         return (
             <div className="o-menu">
-                <div className="o-menu__sidebar">
-                    <Sidebar logo={logo} buttonList={buttonList} />
-                </div>
-                <div className="o-menu__main">
-                    <div className="o-menu__main-header">
-                        <AppBar
-                            title={translate(translationPrefix + "appTitle")}
-                        />
-                        {/* TODO: Put title in translation file */}
-                    </div>
-                    <main className="o-menu__main-content">
-                        <Switch>
-                            {buttonList.map((o) => (
-                                <Route
-                                    key={o.title}
-                                    path={o.path}
-                                    exact={o.exact}
-                                >
-                                    {o.Component}
-                                </Route>
-                            ))}
-                        </Switch>
-                    </main>
-                </div>
+                <Page
+                    title={translate(translationPrefix + "appTitle")}
+                    logo={logo}
+                    buttonList={buttonList}
+                >
+                    <Switch>
+                        {buttonList.map((o) => (
+                            <Route key={o.title} path={o.path} exact={o.exact}>
+                                {o.Component}
+                            </Route>
+                        ))}
+                    </Switch>
+                </Page>
             </div>
         );
     }

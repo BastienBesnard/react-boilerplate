@@ -6,13 +6,13 @@ import MuiSwitch from "@material-ui/core/Switch";
 
 const propTypes = {
     checked: PropTypes.bool.isRequired,
-    handleChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired
 };
 
 const defaultProps = {};
 
-function Switch({ checked, handleChange }) {
-    return <MuiSwitch checked={checked} onChange={handleChange} />;
+function Switch({ checked, onChange }) {
+    return <MuiSwitch checked={checked} onChange={onChange} />;
 }
 
 Switch.propTypes = propTypes;

@@ -1,15 +1,26 @@
 {
-    "menu": {
-        "appTitle": "BASTIEN B.",
-        "home": "Home",
-        "module": "Module",
-        "tools": "Tools",
-        "404": "404"
+    "core": {
+        "components": {
+            "form": {
+                "edit": "Edit",
+                "cancel": "Cancel",
+                "save": "Save"
+            }
+        }
     },
-    "z-module": {
-        "sample": "Exemple de traduction.",
-        "increment": "Click to increment",
-        "name": "Fill name",
-        "age": "Age"
+    "modules": {
+        "menu": {
+            "appTitle": "BASTIEN B.",
+            "home": "Home",
+            "module": "Module",
+            "tools": "Tools",
+            "404": "404"
+        },
+        "z-module": {
+            "sample": "Exemple de traduction.",
+            "increment": "Click to increment",
+            "name": "Fill name",
+            "age": "Age"
+        }
     }
 }

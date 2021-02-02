@@ -1,12 +1,13 @@
 import React from "react";
 
 // Components - Feedback
-import Progress from "../../02-core/components/feedback/progress";
-import Dialog from "../../02-core/components/feedback/dialog";
-import Snackbar from "../../02-core/components/feedback/snackbar";
-import Backdrop from "../../02-core/components/feedback/backdrop";
-
-import Button from "../../02-core/components/inputs/button";
+import Progress from "../../02-core/components/core/feedback/progress";
+import Dialog from "../../02-core/components/core/feedback/dialog";
+import Snackbar from "../../02-core/components/core/feedback/snackbar";
+import Backdrop from "../../02-core/components/core/feedback/backdrop";
+// Components - Other
+import Section from "../../02-core/components/section";
+import Button from "../../02-core/components/core/inputs/button";
 
 const propTypes = {};
 
@@ -24,23 +25,23 @@ class Feedback extends React.Component {
     }
     render() {
         return (
-            <React.Fragment>
+            <Section title={"Feedback"}>
                 <div>
                     <Snackbar
                         open
                         severity={"success"}
-                        message={"some message"}
+                        message={"Some snackbar"}
                     />
                 </div>
                 <div>
                     <Button
-                        label="Modal"
+                        label="Dialog"
                         onClick={() => this.handleDialogChange(true)}
                     />
                 </div>
                 <div>
                     <Dialog
-                        title={"Some title"}
+                        title={"Some dialog"}
                         handleClose={() => this.handleDialogChange(false)}
                         open={this.state.isDialogOpen}
                         content={"Some content"}
@@ -52,7 +53,7 @@ class Feedback extends React.Component {
                 <div>
                     <Backdrop />
                 </div>
-            </React.Fragment>
+            </Section>
         );
     }
 }

@@ -1,14 +1,16 @@
 import React from "react";
 
 // Components - Inputs
-import Button from "../../02-core/components/inputs/button";
-import Text from "../../02-core/components/inputs/text";
-import Checkbox from "../../02-core/components/inputs/checkbox";
-import Radio from "../../02-core/components/inputs/radio";
-import Datepicker from "../../02-core/components/inputs/datepicker";
-import Select from "../../02-core/components/inputs/select";
-import Autocomplete from "../../02-core/components/inputs/autocomplete";
-import Switch from "../../02-core/components/inputs/switch";
+import Button from "../../02-core/components/core/inputs/button";
+import Text from "../../02-core/components/core/inputs/text";
+import Checkbox from "../../02-core/components/core/inputs/checkbox";
+import Radio from "../../02-core/components/core/inputs/radio";
+import DatePicker from "../../02-core/components/core/inputs/date-picker";
+import Select from "../../02-core/components/core/inputs/select";
+import Autocomplete from "../../02-core/components/core/inputs/autocomplete";
+import Switch from "../../02-core/components/core/inputs/switch";
+// Components - Other
+import Section from "../../02-core/components/section";
 
 const propTypes = {};
 
@@ -20,7 +22,7 @@ class Inputs extends React.Component {
         this.state = {
             isDialogOpen: false,
             isCheckbox: true,
-            date: new Date("2014-08-18T21:11:54"),
+            date: new Date().toISOString().split("T")[0],
             isSwitchChecked: true,
             text: ""
         };
@@ -29,6 +31,7 @@ class Inputs extends React.Component {
         this.handleDateChange = this.handleDateChange.bind(this);
         this.handleSwitchChange = this.handleSwitchChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
+        this.renderTitle = this.renderTitle.bind(this);
     }
     handleDialogChange(isDialogOpen) {
         this.setState({ isDialogOpen });
@@ -36,31 +39,50 @@ class Inputs extends React.Component {
     handleCheckBoxChange(event) {
         this.setState({ isCheckbox: event.target.checked });
     }
-    handleDateChange(date) {
-        this.setState({ date });
+    handleDateChange(event) {
+        this.setState({ date: event.target.value });
     }
     handleSwitchChange(event) {
         this.setState({ isSwitchChecked: event.target.checked });
     }
-    handleTextChange(value) {
-        this.setState({ text: value });
+    handleTextChange(event) {
+        this.setState({ text: event.target.value });
+    }
+    renderTitle(title) {
+        return <h3>{title}</h3>;
     }
     render() {
         return (
-            <React.Fragment>
+            <Section title={"Inputs"}>
+                {this.renderTitle("Button")}
                 <Button
-                    label="Button"
+                    label="Some button"
                     onClick={() => console.log("Button clicked!")}
                     icon="send"
                 />
-                <Checkbox
-                    checked={this.state.isCheckbox}
-                    handleChange={this.handleCheckBoxChange}
+                <br />
+                <Button
+                    label="Some button 2"
+                    onClick={() => console.log("Button clicked!")}
                 />
+                {this.renderTitle("Checkbox")}
+                <Checkbox
+                    label="Some checkbox label"
+                    checked={this.state.isCheckbox}
+                />
+
+                <Checkbox
+                    label="Some checkbox label 2"
+                    checked={this.state.isCheckbox}
+                    onChange={this.handleCheckBoxChange}
+                    edit
+                />
+                {this.renderTitle("Switch")}
                 <Switch
                     checked={this.state.isSwitchChecked}
-                    handleChange={this.handleSwitchChange}
+                    onChange={this.handleSwitchChange}
                 />
+                {this.renderTitle("Text")}
                 <Text label="Some text label" value={this.state.text} />
                 <Text
                     label="Some text label"
@@ -75,15 +97,19 @@ class Inputs extends React.Component {
                     error
                     edit
                 />
+                {this.renderTitle("Select")}
                 <Select />
-                <Datepicker
-                    label={"some date picker label"}
+                {this.renderTitle("Date picker")}
+                <DatePicker
+                    label="Some date picker label"
                     value={this.state.date}
-                    handleChange={this.handleDateChange}
+                    onChange={this.handleDateChange}
                 />
+                {this.renderTitle("Radio")}
                 <Radio />
+                {this.renderTitle("Autocomplete")}
                 <Autocomplete />
-            </React.Fragment>
+            </Section>
         );
     }
 }

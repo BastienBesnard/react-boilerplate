@@ -1,0 +1,31 @@
+@import "../../styles/const.scss";
+
+.c-page {
+    display: flex;
+
+    .c-page__sidebar-desktop {
+        width: $sidebar-width;
+    }
+
+    .c-page__main {
+        flex: 1;
+        height: 100vh;
+    }
+
+    .c-page__main-header {
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .c-page__main-content {
+        margin: ($app-bar-height-mobile + 5px) 5px 5px 5px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+        .c-page__main-content {
+            margin: ($app-bar-height-desktop + 10px) 10px 10px 10px;
+        }
+    }
+}

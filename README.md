@@ -13,10 +13,12 @@ http://localhost:8080/
 
 ## TODO
 
+-   Handle mobile menu display
+-   Add page navigation between sections
 -   Read field (label + value + currency(kg, etc..) + isRequired)
--   Form with read / write mode
+-   Add ability to have a custom validate in form
+-   Form fields: Checkbox, Radio, ...
 -   Multiple translation files
--   Form components => Contact / send email
 -   Maintenance page / mode
 
 ## Sources

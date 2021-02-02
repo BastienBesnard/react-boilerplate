@@ -1,0 +1,33 @@
+@import "../../styles/const.scss";
+@import "../../styles/colors/index.scss";
+
+.c-section {
+    background-color: $white;
+    margin-bottom: 5px;
+    padding: 10px;
+
+    .c-section__header {
+        display: flex;
+        .c-section__header-title {
+            margin: auto;
+        }
+        .c-section__header-action {
+            flex: 1;
+            margin-left: 20px;
+            display: flex;
+        }
+        .c-section__header-action-button {
+            margin: 0 5px;
+        }
+    }
+
+    .c-section__content {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: $desktop-min-width) {
+    .c-section {
+        margin-bottom: 10px;
+    }
+}

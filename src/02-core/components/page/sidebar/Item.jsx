@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ButtonBase from "@material-ui/core/ButtonBase";
 
 // Components
-import Icon from "../../data-display/icon";
+import Icon from "../../core/data-display/icon";
 
 const propTypes = {
     icon: PropTypes.string.isRequired,
@@ -31,14 +31,12 @@ function Item({ icon, title, path }) {
                 exact={path === "/"}
                 to={path}
                 activeClassName="c-sidebar-item__active"
-                className="c-sidebar-link"
+                className="c-sidebar-item-link"
             >
                 <ButtonBase className={classes.buttonBase} component="div">
-                    <div className="c-sidebar-link__content">
-                        <div className="c-sidebar-link__content-logo">
-                            <Icon>{icon}</Icon>
-                        </div>
-                        <div className="c-sidebar-link__content-title">
+                    <div className="c-sidebar-item-link__content">
+                        <Icon>{icon}</Icon>
+                        <div className="c-sidebar-item-link__content-title">
                             {title}
                         </div>
                     </div>

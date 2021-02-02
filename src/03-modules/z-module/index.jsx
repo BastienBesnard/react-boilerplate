@@ -9,8 +9,8 @@ import { connect } from "react-redux";
 import { withTranslation } from "../../02-core/utils/i18n";
 
 // Components
-import Button from "../../02-core/components/inputs/button";
-import Text from "../../02-core/components/inputs/text";
+import Button from "../../02-core/components/core/inputs/button";
+import Text from "../../02-core/components/core/inputs/text";
 import ClassComponent from "../../02-core/components/z-class-component/ClassComponent";
 import FunctionalComponent from "../../02-core/components/z-functional-component/FunctionalComponent";
 
@@ -20,7 +20,7 @@ import "./index.scss";
 // Actions
 import { addCounter, loadNameInformation } from "./actions";
 
-const translationPrefix = "z-module.";
+const translationPrefix = "modules.z-module.";
 
 const mapStateToProps = (state /*, ownProps*/) => {
     const { sampleReducer } = state;
@@ -55,8 +55,9 @@ class MyModule extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
     }
-    handleChange(value) {
+    handleChange(event) {
         const { loadNameInformation } = this.props;
+        const { value } = event.target;
         this.setState({ value });
         loadNameInformation(value, "test2");
     }
@@ -79,6 +80,7 @@ class MyModule extends React.Component {
                         label={translate(translationPrefix + "name")}
                         value={value}
                         onChange={this.handleChange}
+                        edit
                     />
                     <div>
                         {translate(translationPrefix + "age") +

@@ -2,8 +2,9 @@
 import React from "react";
 
 // Components
-import Inputs from "./Inputs";
 import DataDisplay from "./DataDisplay";
+import SampleForm from "./SampleForm";
+import Inputs from "./Inputs";
 import Feedback from "./Feedback";
 import Navigation from "./Navigation";
 
@@ -11,25 +12,26 @@ const propTypes = {};
 
 const defaultProps = {};
 
-class MyModule2 extends React.Component {
+class Tools extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <DataDisplay />
+                <SampleForm />
                 <Inputs />
                 <Feedback />
                 <Navigation />
-            </div>
+            </React.Fragment>
         );
     }
 }
 
-MyModule2.propTypes = propTypes;
-MyModule2.defaultProps = defaultProps;
-MyModule2.displayName = "MyModule2";
+Tools.propTypes = propTypes;
+Tools.defaultProps = defaultProps;
+Tools.displayName = "Tools";
 
-export default MyModule2;
+export default Tools;

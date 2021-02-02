@@ -1,8 +1,10 @@
 import React from "react";
 
 // Components - Navigation
-import Tabs from "../../02-core/components/navigation/tabs";
-import Link from "../../02-core/components/navigation/link";
+import Tabs from "../../02-core/components/core/navigation/tabs";
+import Link from "../../02-core/components/core/navigation/link";
+// Components - Other
+import Section from "../../02-core/components/section";
 
 const propTypes = {};
 
@@ -15,13 +17,13 @@ class Navigation extends React.Component {
     }
     render() {
         return (
-            <React.Fragment>
+            <Section title={"Navigation"}>
                 <Tabs />
                 <Link
                     label="Link label"
                     handleClick={() => console.log("Link clicked!")}
                 />
-            </React.Fragment>
+            </Section>
         );
     }
 }

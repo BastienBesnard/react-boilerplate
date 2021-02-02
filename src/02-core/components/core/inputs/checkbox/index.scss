@@ -1,0 +1,10 @@
+@import "../../../../styles/colors/index.scss";
+
+.c-checkbox {
+    .c-checkbox__value-read-mode.Mui-disabled {
+        color: $color-text-1;
+    }
+    .c-checkbox__label-edit-mode {
+        color: $color-text-2;
+    }
+}
