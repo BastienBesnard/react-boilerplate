@@ -8,22 +8,35 @@ import MuiCheckbox from "@material-ui/core/Checkbox";
 import "./index.scss";
 
 const propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string,
     label: PropTypes.string.isRequired,
     checked: PropTypes.bool,
     onChange: PropTypes.func,
+    // TODO
+    //helperText: PropTypes.string,
+    //required: PropTypes.bool,
+    //error: PropTypes.bool,
     edit: PropTypes.bool
 };
 
 const defaultProps = {
+    id: undefined,
     checked: false,
     onChange: () => {},
+    // TODO
+    //helperText: undefined,
+    //required: false,
+    //error: false,
     edit: false
 };
 
-function Checkbox({ label, checked, onChange, edit }) {
+function Checkbox({ id, name, label, checked, onChange, edit }) {
     return (
         <div className="c-checkbox">
             <MuiCheckbox
+                id={id}
+                name={name}
                 checked={checked}
                 onChange={onChange}
                 disabled={!edit}

@@ -1,14 +1,30 @@
 import React from "react";
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 // Material-ui
+import MuiRadio from "@material-ui/core/Radio";
 
-const propTypes = {};
+const propTypes = {
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    checked: PropTypes.bool
+};
 
-const defaultProps = {};
+const defaultProps = {
+    onChange: () => {},
+    checked: false
+};
 
-function Radio() {
-    return <div>{"TODO: Radio"}</div>;
+function Radio({ value, onChange, checked }) {
+    return (
+        <MuiRadio
+            name="test"
+            value={value}
+            onChange={onChange}
+            label="Female"
+            checked={checked}
+        />
+    );
 }
 
 Radio.propTypes = propTypes;

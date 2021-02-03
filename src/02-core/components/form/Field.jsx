@@ -7,10 +7,10 @@ import DOMAINS from "../../config/domain";
 const propTypes = {
     name: PropTypes.string.isRequired,
     entityDefinition: PropTypes.object.isRequired,
-    edit: PropTypes.bool.isRequired,
     handleChange: PropTypes.func.isRequired,
     value: PropTypes.any,
-    error: PropTypes.string
+    error: PropTypes.string,
+    edit: PropTypes.bool.isRequired
 };
 
 const defaultProps = {
@@ -19,15 +19,17 @@ const defaultProps = {
 };
 
 function Field({ name, entityDefinition, edit, handleChange, value, error }) {
-    const { label, domain } = entityDefinition[name];
+    const { label, domain, required } = entityDefinition[name];
     const { buildProps, Component } = DOMAINS[domain];
     const fieldProps = buildProps({
+        name,
         label,
         value,
         onChange: handleChange(name),
         error: !!error, // TODO: Better handle of errors and helperText
         helperText: error,
-        edit
+        edit,
+        required
     });
     return <Component {...fieldProps} />;
 }

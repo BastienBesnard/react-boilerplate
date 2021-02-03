@@ -9,6 +9,7 @@ import DatePicker from "../../02-core/components/core/inputs/date-picker";
 import Select from "../../02-core/components/core/inputs/select";
 import Autocomplete from "../../02-core/components/core/inputs/autocomplete";
 import Switch from "../../02-core/components/core/inputs/switch";
+import Fieldset from "../../02-core/components/core/inputs/fieldset";
 // Components - Other
 import Section from "../../02-core/components/section";
 
@@ -22,15 +23,21 @@ class Inputs extends React.Component {
         this.state = {
             isDialogOpen: false,
             isCheckbox: true,
+            radio: null,
             date: new Date().toISOString().split("T")[0],
             isSwitchChecked: true,
-            text: ""
+            text: "",
+            checkboxFieldsetList: [1, 2]
         };
         this.handleDialogChange = this.handleDialogChange.bind(this);
         this.handleCheckBoxChange = this.handleCheckBoxChange.bind(this);
+        this.handleRadioChange = this.handleRadioChange.bind(this);
         this.handleDateChange = this.handleDateChange.bind(this);
         this.handleSwitchChange = this.handleSwitchChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
+        this.handleCheckboxFieldsetChange = this.handleCheckboxFieldsetChange.bind(
+            this
+        );
         this.renderTitle = this.renderTitle.bind(this);
     }
     handleDialogChange(isDialogOpen) {
@@ -38,6 +45,9 @@ class Inputs extends React.Component {
     }
     handleCheckBoxChange(event) {
         this.setState({ isCheckbox: event.target.checked });
+    }
+    handleRadioChange(event) {
+        this.setState({ radio: event.target.value });
     }
     handleDateChange(event) {
         this.setState({ date: event.target.value });
@@ -47,6 +57,9 @@ class Inputs extends React.Component {
     }
     handleTextChange(event) {
         this.setState({ text: event.target.value });
+    }
+    handleCheckboxFieldsetChange(list) {
+        this.setState({ checkboxFieldsetList: list });
     }
     renderTitle(title) {
         return <h3>{title}</h3>;
@@ -91,14 +104,20 @@ class Inputs extends React.Component {
                     onChange={this.handleSwitchChange}
                 />
                 {this.renderTitle("Text")}
-                <Text label="Some text label" value={this.state.text} />
                 <Text
+                    name="someTextLabel"
+                    label="Some text label"
+                    value={this.state.text}
+                />
+                <Text
+                    name="someTextLabel"
                     label="Some text label"
                     value={this.state.text}
                     onChange={this.handleTextChange}
                     edit
                 />
                 <Text
+                    name="someTextLabel"
                     label="Some text label"
                     value={this.state.text}
                     onChange={this.handleTextChange}
@@ -115,9 +134,35 @@ class Inputs extends React.Component {
                     onChange={this.handleDateChange}
                 />
                 {this.renderTitle("Radio")}
-                <Radio />
+                <Radio
+                    value="t2"
+                    onChange={this.handleRadioChange}
+                    checked={this.state.radio === "t2"}
+                />
+                <Radio
+                    value="t1"
+                    onChange={this.handleRadioChange}
+                    checked={this.state.radio === "t1"}
+                />
+                <input type="radio" name="gender" value="male" />
+                <input type="radio" name="gender" value="female" />
+                <input type="radio" name="gender" value="other" />
                 {this.renderTitle("Autocomplete")}
                 <Autocomplete />
+                {this.renderTitle("Fieldset")}
+                <Fieldset
+                    name="someFieldset"
+                    label="Some fieldset"
+                    list={[
+                        { id: 1, label: "Label 1" },
+                        { id: 2, label: "Label 2" }
+                    ]}
+                    valueList={this.state.checkboxFieldsetList}
+                    onChange={this.handleCheckboxFieldsetChange}
+                    helperText="Some helper text"
+                    edit
+                    Component={Checkbox}
+                />
             </Section>
         );
     }

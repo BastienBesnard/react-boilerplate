@@ -11,8 +11,25 @@ const FIELD_TYPES = {
 export default {
     [DOMAIN_TYPES.DO_LABEL]: {
         Component: Text,
-        buildProps: function (props) {
-            return { ...props, type: FIELD_TYPES.TEXT };
+        buildProps: function ({
+            name,
+            label,
+            value,
+            onChange,
+            helperText,
+            error,
+            edit
+        }) {
+            return {
+                name,
+                label,
+                value,
+                onChange,
+                helperText,
+                error,
+                edit,
+                type: FIELD_TYPES.TEXT
+            };
         },
         validate: function () {
             return true;
@@ -27,14 +44,23 @@ export default {
     [DOMAIN_TYPES.DO_BOOLEAN]: {
         Component: Checkbox,
         buildProps: function ({
+            name,
             label,
             value,
             onChange,
-            error,
             helperText,
+            error,
             edit
         }) {
-            return { label, checked: value, onChange, error, helperText, edit };
+            return {
+                name,
+                label,
+                checked: value,
+                onChange,
+                helperText,
+                error,
+                edit
+            };
         },
         validate: function (value) {
             return value;
