@@ -1,10 +1,15 @@
 // Components
-import Text from "../core/inputs/text";
-import { DOMAIN_NAMES, FIELD_TYPES } from "./const";
-import Checkbox from "../core/inputs/checkbox";
+import Text from "../../components/core/inputs/text";
+import Checkbox from "../../components/core/inputs/checkbox";
 
-export const DOMAINS = {
-    [DOMAIN_NAMES.DO_LABEL]: {
+import { DOMAIN_TYPES } from "../../const";
+
+const FIELD_TYPES = {
+    TEXT: "text"
+};
+
+export default {
+    [DOMAIN_TYPES.DO_LABEL]: {
         Component: Text,
         buildProps: function (props) {
             return { ...props, type: FIELD_TYPES.TEXT };
@@ -19,7 +24,7 @@ export const DOMAINS = {
             return value;
         }
     },
-    [DOMAIN_NAMES.DO_BOOLEAN]: {
+    [DOMAIN_TYPES.DO_BOOLEAN]: {
         Component: Checkbox,
         buildProps: function ({
             label,
@@ -37,7 +42,7 @@ export const DOMAINS = {
         format: function () {},
         unformat: function () {}
     },
-    [DOMAIN_NAMES.DO_AMOUNT]: {
+    [DOMAIN_TYPES.DO_AMOUNT]: {
         /*validate: function () {},
         format: function () {},
         unformat: function () {}*/

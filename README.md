@@ -13,11 +13,14 @@ http://localhost:8080/
 
 ## TODO
 
--   Handle mobile menu display
--   Add page navigation between sections
+-   Add navigation module between sections of the same page
 -   Read field (label + value + currency(kg, etc..) + isRequired)
--   Add ability to have a custom validate in form
 -   Form fields: Checkbox, Radio, ...
+
+-   Rather form disabled than just the save button?
+-   General pass on components props, clean files.
+
+-   Add ability to have a custom validate in form ?
 -   Multiple translation files
 -   Maintenance page / mode
 

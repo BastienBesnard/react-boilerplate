@@ -9,12 +9,13 @@ import "./index.scss";
 
 const propTypes = {
     label: PropTypes.string.isRequired,
-    checked: PropTypes.bool.isRequired,
+    checked: PropTypes.bool,
     onChange: PropTypes.func,
     edit: PropTypes.bool
 };
 
 const defaultProps = {
+    checked: false,
     onChange: () => {},
     edit: false
 };
