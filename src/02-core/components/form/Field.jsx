@@ -8,7 +8,6 @@ const propTypes = {
     name: PropTypes.string.isRequired,
     entityDefinition: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
-    setFieldValue: PropTypes.func.isRequired,
     value: PropTypes.any,
     error: PropTypes.string,
     edit: PropTypes.bool.isRequired
@@ -24,7 +23,6 @@ function Field({
     entityDefinition,
     edit,
     handleChange,
-    setFieldValue,
     value,
     error,
     ...otherProps
@@ -36,8 +34,7 @@ function Field({
         name,
         label,
         value,
-        onChange: handleChange(name),
-        setFieldValue,
+        onChange: handleChange,
         error: !!error, // TODO: Better handle of errors and helperText
         helperText: error,
         edit,

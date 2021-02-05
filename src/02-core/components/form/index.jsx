@@ -116,7 +116,6 @@ class Form extends React.Component {
                 >
                     {({
                         handleChange,
-                        setFieldValue,
                         values,
                         errors,
                         handleSubmit,
@@ -138,23 +137,11 @@ class Form extends React.Component {
                                             entityDefinition={entityDefinition}
                                             edit={edit}
                                             handleChange={handleChange}
-                                            setFieldValue={setFieldValue}
                                             value={values[name]}
                                             error={errors[name]}
                                             {...otherProps}
                                         />
                                     ))}
-                                    <input
-                                        type="checkbox"
-                                        name="someCheckbox"
-                                        value="3"
-                                    />
-                                    <input
-                                        type="checkbox"
-                                        name="someCheckbox"
-                                        value="4"
-                                    />
-                                    {JSON.stringify(values, null, 2)}
                                 </Section>
                             </form>
                         );

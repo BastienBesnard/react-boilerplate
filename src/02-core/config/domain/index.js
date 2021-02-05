@@ -101,7 +101,7 @@ export default {
             name,
             label,
             value,
-            setFieldValue,
+            onChange,
             helperText,
             error,
             edit
@@ -110,7 +110,7 @@ export default {
                 name,
                 label,
                 valueList: value,
-                onChange: (value) => setFieldValue(name, value),
+                onChange,
                 helperText,
                 error,
                 edit
