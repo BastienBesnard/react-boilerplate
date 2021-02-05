@@ -12,6 +12,10 @@ export const sampleEntityDefinition = {
     },
     someCheckbox: {
         label: "Some checkbox",
-        domain: DOMAIN_TYPES.DO_BOOLEAN
+        domain: DOMAIN_TYPES.DO_LIST
+    },
+    someRadio: {
+        label: "Some radio",
+        domain: DOMAIN_TYPES.DO_ID
     }
 };

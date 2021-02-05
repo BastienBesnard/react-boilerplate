@@ -8,6 +8,7 @@ const propTypes = {
     name: PropTypes.string.isRequired,
     entityDefinition: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
+    setFieldValue: PropTypes.func.isRequired,
     value: PropTypes.any,
     error: PropTypes.string,
     edit: PropTypes.bool.isRequired
@@ -18,20 +19,31 @@ const defaultProps = {
     error: null
 };
 
-function Field({ name, entityDefinition, edit, handleChange, value, error }) {
+function Field({
+    name,
+    entityDefinition,
+    edit,
+    handleChange,
+    setFieldValue,
+    value,
+    error,
+    ...otherProps
+}) {
     const { label, domain, required } = entityDefinition[name];
-    const { buildProps, Component } = DOMAINS[domain];
+    const { getComponent, buildProps } = DOMAINS[domain];
+    const Component = getComponent();
     const fieldProps = buildProps({
         name,
         label,
         value,
         onChange: handleChange(name),
+        setFieldValue,
         error: !!error, // TODO: Better handle of errors and helperText
         helperText: error,
         edit,
         required
     });
-    return <Component {...fieldProps} />;
+    return <Component {...fieldProps} {...otherProps} />;
 }
 
 Field.propTypes = propTypes;

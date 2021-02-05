@@ -77,6 +77,7 @@ class MyModule extends React.Component {
                 </div>
                 <div className="o-module__age">
                     <Text
+                        name="name"
                         label={translate(translationPrefix + "name")}
                         value={value}
                         onChange={this.handleChange}

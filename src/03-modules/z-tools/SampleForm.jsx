@@ -30,7 +30,8 @@ class FormSample extends React.Component {
         const someDataFromServer = {
             someText1: "", // TODO handle someText1 = null and not "": Its is actually throwing a warning in props validation
             someText2: "Some initial value",
-            someCheckbox: false
+            someCheckbox: [],
+            someRadio: "1"
         };
 
         return (
@@ -46,7 +47,18 @@ class FormSample extends React.Component {
                     <React.Fragment>
                         {renderField("someText1")}
                         {renderField("someText2")}
-                        {renderField("someCheckbox")}
+                        {renderField("someCheckbox", {
+                            list: [
+                                { id: 1, label: "Label 1" },
+                                { id: 2, label: "Label 2" }
+                            ]
+                        })}
+                        {renderField("someRadio", {
+                            list: [
+                                { id: 1, label: "Label 1" },
+                                { id: 2, label: "Label 2" }
+                            ]
+                        })}
                     </React.Fragment>
                 )}
             </Form>

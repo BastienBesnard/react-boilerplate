@@ -5,25 +5,40 @@ import PropTypes from "prop-types";
 import MuiRadio from "@material-ui/core/Radio";
 
 const propTypes = {
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
-    checked: PropTypes.bool
+    checked: PropTypes.bool.isRequired,
+    onChange: PropTypes.func.isRequired
+    // TODO
+    //helperText: PropTypes.string,
+    //required: PropTypes.bool,
+    //error: PropTypes.bool,
+    //edit: PropTypes.bool
 };
 
 const defaultProps = {
-    onChange: () => {},
-    checked: false
+    // TODO
+    //helperText: undefined,
+    //required: false,
+    //error: false,
+    //edit: false
 };
 
-function Radio({ value, onChange, checked }) {
+function Radio({ name, label, value, checked, onChange }) {
     return (
-        <MuiRadio
-            name="test"
-            value={value}
-            onChange={onChange}
-            label="Female"
-            checked={checked}
-        />
+        <div className="c-radio">
+            <MuiRadio
+                name={name}
+                value={value}
+                label={label}
+                checked={checked}
+                onChange={onChange}
+            />
+            <label className={/*edit ? "c-radio__label-edit-mode" : */ ""}>
+                {label}
+            </label>
+        </div>
     );
 }
 

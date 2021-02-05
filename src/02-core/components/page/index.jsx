@@ -27,7 +27,6 @@ class Page extends React.Component {
         this.renderMain = this.renderMain.bind(this);
     }
     handleSidebar(isSidebarOpen) {
-        console.log("isSidebarOpen", isSidebarOpen);
         this.setState({ isSidebarOpen });
     }
     renderSidebar(isDesktop) {

@@ -91,8 +91,6 @@ class Form extends React.Component {
                     initialValues={initialValues}
                     validate={(values) => {
                         const errors = {};
-
-                        console.log("values", values);
                         // TODO: Generic validation by type?
                         // iterate over each values or initial values?
                         // Find a way to get the field list
@@ -118,6 +116,7 @@ class Form extends React.Component {
                 >
                     {({
                         handleChange,
+                        setFieldValue,
                         values,
                         errors,
                         handleSubmit,
@@ -133,16 +132,29 @@ class Form extends React.Component {
                                         isSubmitting
                                     )}
                                 >
-                                    {children((name) => (
+                                    {children((name, otherProps) => (
                                         <Field
                                             name={name}
                                             entityDefinition={entityDefinition}
                                             edit={edit}
                                             handleChange={handleChange}
+                                            setFieldValue={setFieldValue}
                                             value={values[name]}
                                             error={errors[name]}
+                                            {...otherProps}
                                         />
                                     ))}
+                                    <input
+                                        type="checkbox"
+                                        name="someCheckbox"
+                                        value="3"
+                                    />
+                                    <input
+                                        type="checkbox"
+                                        name="someCheckbox"
+                                        value="4"
+                                    />
+                                    {JSON.stringify(values, null, 2)}
                                 </Section>
                             </form>
                         );
