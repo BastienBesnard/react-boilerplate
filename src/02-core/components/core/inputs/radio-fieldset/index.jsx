@@ -34,8 +34,8 @@ class RadioFieldset extends React.Component {
             list,
             value,
             onChange,
-            helperText
-            //edit
+            helperText,
+            edit
         } = this.props;
         return (
             <div className="c-radio-fieldset">
@@ -48,7 +48,7 @@ class RadioFieldset extends React.Component {
                         value={o.id.toString()}
                         checked={value === o.id.toString()}
                         onChange={onChange}
-                        // todo edit={edit}
+                        edit={edit}
                     />
                 ))}
                 {helperText /* TODO: use helper component */}

@@ -7,7 +7,9 @@ import CheckboxFieldset from "../../components/core/inputs/checkbox-fieldset";
 import { DOMAIN_TYPES } from "../../const";
 
 const FIELD_TYPES = {
-    TEXT: "text"
+    TEXT: "text",
+    RADIO: "radio",
+    CHECKBOX: "checkbox"
 };
 
 export default {
@@ -71,7 +73,10 @@ export default {
     /*[DOMAIN_TYPES.DO_AMOUNT]: {
     },*/
     [DOMAIN_TYPES.DO_ID]: {
-        getComponent: () => RadioFieldset,
+        getComponent: (type) =>
+            type === FIELD_TYPES.RADIO
+                ? RadioFieldset
+                : RadioFieldset /* TODO: add select */,
         buildProps: function ({
             name,
             label,
@@ -96,7 +101,10 @@ export default {
         unformat: function () {}
     },
     [DOMAIN_TYPES.DO_LIST]: {
-        getComponent: () => CheckboxFieldset,
+        getComponent: (type) =>
+            type === FIELD_TYPES.CHECKBOX
+                ? CheckboxFieldset
+                : CheckboxFieldset /* TODO: add select */,
         buildProps: function ({
             name,
             label,

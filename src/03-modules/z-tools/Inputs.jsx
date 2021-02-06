@@ -63,8 +63,18 @@ class Inputs extends React.Component {
     handleTextChange(event) {
         this.setState({ text: event.target.value });
     }
-    handleCheckboxFieldsetChange(list) {
-        this.setState({ checkboxFieldsetList: list });
+    handleCheckboxFieldsetChange(event) {
+        const { checkboxFieldsetList } = this.state;
+        const index = checkboxFieldsetList.findIndex(
+            (e) => e === event.target.value
+        );
+        let newList = [...checkboxFieldsetList];
+        if (event.target.checked && index < 0) {
+            newList.push(event.target.value);
+        } else if (!event.target.checked && index > -1) {
+            newList.splice(index, 1);
+        }
+        this.setState({ checkboxFieldsetList: newList });
     }
     handleRadioFieldsetChange(event) {
         this.setState({ radioFieldset: event.target.value });
@@ -100,6 +110,7 @@ class Inputs extends React.Component {
                     label="Some checkbox label"
                     value="1"
                     checked={this.state.isCheckbox}
+                    onChange={() => {}}
                 />
 
                 <Checkbox
@@ -148,17 +159,18 @@ class Inputs extends React.Component {
                 {this.renderTitle("Radio")}
                 <Radio
                     name={"radio"}
-                    label={"some radio 1"}
+                    label={"Some radio"}
                     value={"radio1"}
                     checked={this.state.radio === "radio1"}
                     onChange={this.handleRadioChange}
                 />
                 <Radio
                     name={"radio"}
-                    label={"some radio 2"}
-                    value={"radio2"}
-                    checked={this.state.radio === "radio2"}
+                    label={"Some radio 2"}
+                    value={"radio1"}
+                    checked={this.state.radio === "radio1"}
                     onChange={this.handleRadioChange}
+                    edit
                 />
                 {this.renderTitle("Autocomplete")}
                 <Autocomplete />

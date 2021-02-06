@@ -11,8 +11,8 @@ const propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    checked: PropTypes.bool,
-    onChange: PropTypes.func,
+    checked: PropTypes.bool.isRequired,
+    onChange: PropTypes.func.isRequired,
     // TODO
     //helperText: PropTypes.string,
     //required: PropTypes.bool,
@@ -21,8 +21,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-    checked: false,
-    onChange: () => {},
     // TODO
     //helperText: undefined,
     //required: false,

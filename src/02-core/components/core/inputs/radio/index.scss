@@ -1,0 +1,10 @@
+@import "../../../../styles/colors/index.scss";
+
+.c-radio {
+    .c-radio__value-read-mode.Mui-disabled {
+        color: $color-text-1;
+    }
+    .c-radio__label-edit-mode {
+        color: $color-text-2;
+    }
+}
