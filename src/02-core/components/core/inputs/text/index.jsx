@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 
 // Material-ui
 import TextField from "@material-ui/core/TextField";
+//import InputAdornment from "@material-ui/core/InputAdornment";
+
+import FIELD_TYPES from "../../../../const/field-types";
 
 // Style
 import "./index.scss";
@@ -18,7 +21,14 @@ const propTypes = {
     required: PropTypes.bool,
     error: PropTypes.bool,
     edit: PropTypes.bool,
-    type: PropTypes.string
+    type: PropTypes.oneOf([
+        FIELD_TYPES.EMAIL,
+        FIELD_TYPES.NUMBER,
+        FIELD_TYPES.PASSWORD,
+        FIELD_TYPES.SEARCH,
+        FIELD_TYPES.TEL,
+        FIELD_TYPES.TEXT
+    ])
 };
 
 const defaultProps = {
@@ -28,7 +38,7 @@ const defaultProps = {
     required: false,
     error: false,
     edit: false,
-    type: "text"
+    type: FIELD_TYPES.TEXT
 };
 
 function Text({
@@ -60,7 +70,10 @@ function Text({
                 InputProps={{
                     disabled: !edit,
                     disableUnderline: !edit,
-                    classes: { root: !edit ? "c-text__value-read-mode" : "" }
+                    classes: { root: !edit ? "c-text__value-read-mode" : "" },
+                    endAdornment: /* TODO value ? (
+                        <InputAdornment position="start">Kg</InputAdornment>
+                    ) : */ null
                 }}
             />
         </div>

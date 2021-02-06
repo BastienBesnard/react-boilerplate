@@ -152,6 +152,7 @@ class Inputs extends React.Component {
                 <Select />
                 {this.renderTitle("Date picker")}
                 <DatePicker
+                    name="someDatePicker"
                     label="Some date picker label"
                     value={this.state.date}
                     onChange={this.handleDateChange}

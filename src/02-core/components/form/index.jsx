@@ -106,7 +106,7 @@ class Form extends React.Component {
                                 entityDefinition["someCheckbox"].domain
                             ].validate(values.someCheckbox)
                         ) {
-                            alert("checkbox required");
+                            // alert("checkbox required");
                         }
 
                         return errors;

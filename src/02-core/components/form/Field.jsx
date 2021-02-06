@@ -30,17 +30,20 @@ function Field({
     const { label, domain, required } = entityDefinition[name];
     const { getComponent, buildProps } = DOMAINS[domain];
     const Component = getComponent();
-    const fieldProps = buildProps({
-        name,
-        label,
-        value,
-        onChange: handleChange,
-        error: !!error, // TODO: Better handle of errors and helperText
-        helperText: error,
-        edit,
-        required
-    });
-    return <Component {...fieldProps} {...otherProps} />;
+    const fieldProps = buildProps(
+        {
+            name,
+            label,
+            value,
+            onChange: handleChange,
+            error: !!error, // TODO: Better handle of errors and helperText
+            helperText: error,
+            edit,
+            required
+        },
+        otherProps
+    );
+    return <Component {...fieldProps} />;
 }
 
 Field.propTypes = propTypes;
